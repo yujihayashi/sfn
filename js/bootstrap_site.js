@@ -6,6 +6,33 @@ $(function() {
     $("#load").ajaxStop(function() {
         $(this).hide();
     });
+
+    // Setup variables
+    $window = $(window);
+    $slide = $('.page');
+    $body = $('body');
+    adjustWindow();
+    function adjustWindow(){
+
+        
+
+        // Get window size
+        winH = $window.height();
+        console.log(winH);
+        // Keep minimum height 550
+        if(winH <= 561) {
+            winH = 561;
+        }
+//        console.log(winH);
+
+        // Resize our slides
+        $slide.height(winH);
+        //$slideTall.height(winH*2);
+        //$slideTall2.height(winH*3);
+
+
+
+    }
 });
 $(function() {
     $('.jImgFormat').find('img').each(function() {
