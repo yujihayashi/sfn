@@ -1,5 +1,6 @@
-@primary-color: #4c8438; 
-@secondary-color: #90b73e;  
+@primary-color: #d2232a; 
+@secondary-color: #949599;  
+@third-color: #c9cacc;  
 /*
 FUNÇÕES PADRÕES START
 *********************************************************************/
@@ -27,7 +28,7 @@ NON-RESPONSIVE START
 **********************************************************************************************/
 /* ALTERAR APENAS ESTAS VARIAVEIS DE ACORDO COM O PROJETO START */
 .container {max-width: none !important;width: 960px;}
-.navbar-nav > li > a {padding-top: 15px;padding-bottom:15px;}
+.navbar-nav > li > a {padding-top: 3.5px;padding-bottom:3.5px;}
 /* ALTERAR APENAS ESTAS VARIAVEIS DE ACORDO COM O PROJETO END */
 /* Finesse the page header spacing */.page-header {margin-bottom: 30px;}.page-header .lead {margin-bottom: 10px;}/* Non-responsive overrides** Utilitze the following CSS to disable the responsive-ness of the container,* grid system, and navbar.*//* Reset the container *//* Always float the navbar header */.navbar-header {float: left;}/* Undo the collapsing navbar */.navbar-collapse {display: block !important;height: auto !important;padding-bottom: 0;overflow: visible !important;}.navbar-toggle {display: none;}.navbar-collapse {border-top: 0;}.navbar-brand {margin-left: -15px;}/* Always apply the floated nav */.navbar-nav {float: left;margin: 0;}.navbar-nav > li {float: left;}/* Redeclare since we override the float above */.navbar-nav.navbar-right {float: right;}/* Undo custom dropdowns */.navbar .navbar-nav .open .dropdown-menu {position: absolute;float: left;background-color: #fff;border: 1px solid #cccccc;border: 1px solid rgba(0, 0, 0, 0.15);border-width: 0 1px 1px;border-radius: 0 0 4px 4px;-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);}.navbar-default .navbar-nav .open .dropdown-menu > li > a {color: #333;}.navbar .navbar-nav .open .dropdown-menu > li > a:hover,.navbar .navbar-nav .open .dropdown-menu > li > a:focus,.navbar .navbar-nav .open .dropdown-menu > .active > a,.navbar .navbar-nav .open .dropdown-menu > .active > a:hover,.navbar .navbar-nav .open .dropdown-menu > .active > a:focus {color: #fff !important;background-color: #428bca !important;}.navbar .navbar-nav .open .dropdown-menu > .disabled > a,.navbar .navbar-nav .open .dropdown-menu > .disabled > a:hover,.navbar .navbar-nav .open .dropdown-menu > .disabled > a:focus {color: #999 !important;background-color: transparent !important;}
 /**********************************************************************************************
@@ -41,105 +42,64 @@ a {transition: all 0.25s ease 0s;}
 /*
 FONTS START
 **********************************************************************************************/
-.box-atuacao .box-content, .site-tablet .img.destaque {font-family: 'ralewayheavy', Arial, sans-serif;}
+.box-atuacao .box-content, .site-tablet .img.destaque {font-family: 'robotobold', Arial, sans-serif;}
+.btn-circle-lg-white {font-family: 'robotobold_italic', Arial, sans-serif;}
 /**********************************************************************************************
 FONTS END
 */
 /*
 ESTRUTURA START
 **********************************************************************************************/
-body {background: url(../imagem/site/bg-x.jpg) repeat-x top;}
-.extra-geral {background: url(../imagem/site/bg.jpg) no-repeat center top;min-height: 5368px;min-width: 960px; }
-.site-header {
-    height: 168px;
-    .logotipo {display: inline-block;padding-top:10px;}
-}
-.site-tablet {
-    position: fixed;left: 0;right: 0;bottom: 0;z-index: 2;
-    .container {position: relative;}
-    .box-tablet {
-        position: absolute;right: 113px;bottom: 47px;z-index: 1010;
-        .tablet {position: absolute;z-index: 1;left: -120px;top: -14px;}
-        .hands {position: absolute;z-index: 3;left: -100px;top: 30px;}
-        .imagens {
-            position: relative;z-index: 2;width: 276px;height: 192px;overflow: hidden;background: #4d8537;
-            .img {
-                position: absolute;left: 0;top: 0;background: #4d8537;right: 0;bottom: 0;
-                &.txt {
-                    padding:20px;color: #FFF;font-size: 12px;
-                    .media-heading {color: #000;}
-                    .title {color: #bad869;}
-                }
-                &.destaque {
-                    text-align: center;font-size: 22px;color: #e2e79e;
-                    .title {max-width: 96%;}
-                    * {display: inline-block;vertical-align: middle;}
-                }
+body {}
+.extra-geral {min-width: 960px;}
+.extra-header {
+    position: fixed;left: 0;right: 0;top: 0;background: #FFF;z-index: 2;
+    .site-header {
+        height: 125px;
+        .navbar {margin-bottom: 0;border:0;-webkit-border-radius: 0;-moz-border-radius: 0;-ms-border-radius: 0;-o-border-radius: 0;border-radius: 0;}
+        .navbar-nav {
+            text-transform: uppercase;font-size: 12px;
+            &.navbar-right {margin-right: 0;}
+            > li {
+                width: 124px;border-top:1px solid @third-color;margin-bottom: 2px;margin-right: 16px;background: no-repeat right center;
+                > a {border-top:2px solid @secondary-color;width: 75px;padding-left:0;margin-top:-1px;}
+                &.um {background-image: url(../imagem/site/bg-menu-1.gif);}
+                &.dois {background-image: url(../imagem/site/bg-menu-2.gif);}
+                &.tres {background-image: url(../imagem/site/bg-menu-3.gif);}
+                &.quatro {background-image: url(../imagem/site/bg-menu-4.gif);}
             }
         }
+        .navbar-brand {height: auto;display: inline-block;padding:20px 0 0;}
+        .header-right {padding:40px 0 20px;}
     }
 }
 .page {
-    height: 750px;
-    &#page-sobre {
-        .box-perfil {
-            padding:33px 14px 0 21px;color: #23607d;text-align: center;line-height: 1.2;
-            .box-img {margin-bottom: 16px;}
-            .box-content {padding-left:10px;padding-right: 10px;}
-        }
-        .box-sobre {
-            text-align: center;color: #FFF;padding:30px 40px 0;
-        }
-    }
-    &#page-2 {
-        color: #FFF;line-height: 1;
-    }
-    &#page-3 {
-        .media-heading {color: #FFF;line-height: 1;}
-        .box-content {
-            padding:0 18px 0 0;position: relative;
-            .box-imagem {position: absolute;left: 23px;top: 286px;overflow: hidden;-webkit-border-radius: 150px;-moz-border-radius: 150px;-ms-border-radius: 150px;-o-border-radius: 150px;border-radius: 150px;width: 177px;height: 179px;}
-        }
-        .box-content-2 {padding:78px 0 0 40px;}
-    }
-    &#page-4 {
-        .box-content {padding:152px 34px 0 84px;}
-        .box-content-2 {
-            padding:78px 0 0 40px;
-            .media-heading {color: #FFF;line-height: 1;}
-        }
-    }
-    &#page-5 {
-        height: 832px;
-        .media-heading {color: @secondary-color;}
-        .box-content {
-            padding:184px 34px 0 0px;
-            .box-imagem {
-                text-align: center;
-                > span, > a, > img {display: inline-block;
-                    vertical-align: middle;}
-            }
-        }
-        .box-content-2 {
-            padding:78px 0 0 40px;
-        }
-    }
-    &#page-6 {
-        padding-top:86px;
-        .media-heading {margin-bottom: 40px;color: #FFF;}
+    overflow: hidden;
+    > .content {padding-top:125px;}
+    .page-header {
+        width: 460px;border-bottom: 1px solid @third-color;text-align: center;margin:0 auto 20px;text-transform: uppercase;letter-spacing: 10px;padding:0;
+        h1, h2, h3 {margin:25px 0;}
+        .line {display: block;width: 80px;margin:0 auto;height: 2px;background: @primary-color;margin-bottom: -1px;}
     }
 }
-.site-footer {
-    .media-heading {color: #FFF;}
-    .box-contato {padding:154px 0 0 0;}
-    .box-atuacao {
-        height: 408px;
-        .box-header {padding:96px 174px 0 222px;text-align: center;}
-        .box-content {padding:10px 380px 0 0;}
-    }
-    .box-skype {padding:20px 60px 0 30px;font-size: 12px;text-align: justify;height: 163px;}
-    .box-direitos {color: @secondary-color;padding-top:16px;padding-left:30px;}
+.page-home {
+    background: url(../imagem/site/bg-home.jpg) no-repeat center 325px;
+    .maquete {width: 100%;background: url(../imagem/site/maquete.png) no-repeat center top;height: 379px;position: absolute;left: 0;right: 0;top: 264px;}
+    .scroll-down {position: absolute;left: 0;right: 0;bottom: 0;}
 }
+.page-cases {
+    background: url(../imagem/site/bg-cases.jpg) no-repeat center #393939;
+    &, a {color: #FFF;}
+}
+.page-contato {
+    background: url(../imagem/site/bg-contato.jpg) no-repeat center @primary-color;
+    &, a {color: #FFF;}
+    > .content {padding-top:250px;}
+    .page-header {
+        .line {background-color: #5f5f62;}
+    }
+}
+
 /**********************************************************************************************
 ESTRUTURA END
 */
@@ -148,26 +108,26 @@ CLASSES START
 **********************************************************************************************/
 [class^='lista-'], [class^='lista-'], [class^='menu-'], [class^='menu-'] ul, .cycle-slideshow {list-style:none;margin-bottom:0;padding-left:0;}
 .btn-gray {background: #EEE;color:#C93F2A;}
+.btn-circle-lg-white {
+    width: 122px;height: 122px;text-align: center;-webkit-border-radius: 150px;-moz-border-radius: 150px;-ms-border-radius: 150px;-o-border-radius: 150px;border-radius: 150px;display: inline-block;background: #FFF;color: @primary-color !important;font-size: 14px;text-transform: uppercase;
+    .text {display: inline-block;max-width: 66%;line-height: 1.1;}
+    .text, .space {vertical-align: middle;}
+    &:hover {
+        .text {text-decoration: underline;}
+    }
+}
 .btn-rounded {-webkit-border-radius: 150px;-moz-border-radius: 150px;border-radius: 150px;}
+.box-frase {
+    position: relative;border-top:1px solid @third-color;border-bottom:1px solid @third-color;margin:52px auto;width: 546px;font-size: 11px;
+    .extra {position: relative;display:block;margin:0 auto;width:98px;background: @secondary-color;height: 2px;}
+    .box-content {padding:14px 0;text-align: center;}
+}
 
 .imagem {display: inline-block;overflow: hidden;max-width: 100%;}
 .imagem-rounded {-webkit-border-radius: 150px;-moz-border-radius: 150px;border-radius: 150px;}
 .imagem img {max-width: 135%;}
 .inline-block {display:inline-block;}
 [class^='icon-'], [class*='icon-'] {background-repeat:no-repeat;vertical-align:middle;display:inline-block;background-image:url(../imagem/site/icon.png);}
-
-.popup {
-    display:none;position: fixed;left: 0;right: 0;top: 0;bottom: 0;background: rgba(0,0,0,0.6);z-index: 1040;
-    .popup-content { 
-        position: absolute;left: 50%;top:40px;width:600px;text-align: center;
-    }
-    .popup-img {display: block;z-index: 1;}
-    .popup-close {
-        text-shadow:1px 1px 0 #000;text-align:center;color: #FFF;display:block;transition:all 0.25s ease 0s;position: absolute;right: -30px;top: -30px;z-index: 5;font-size: 10px;text-decoration: none;
-        span {-moz-border-radius:150px;border-radius:150px;background-color:#000;width: 50px;height: 50px;padding:10px 0;font-size: 20px;display: block;transition:all 0.25s ease 0s;}
-        &:hover span {background-color: #333;}
-    }
-}
 
 .space {width:1%;display:inline-block;height:100%;vertical-align:middle;}
 .relative {position: relative;}
@@ -185,14 +145,14 @@ JQUERY UI END
 
 }
 @media (max-width: 767px) {
-   /*    .site-geral:before {content:"TABLET";}*/
+ /*    .site-geral:before {content:"TABLET";}*/
 }
 @media (max-width: 480px) {
-   /*#GERAL:before {content:"MOBILE";}*/
+ /*#GERAL:before {content:"MOBILE";}*/
 }
 @media (min-width: 768px) and (max-width: 980px) {
 
 }
 @media (min-width: 981px) and (max-width: 1200px) {
-   /*#GERAL:before {content:"ACIMA DE TABLET";}*/
+ /*#GERAL:before {content:"ACIMA DE TABLET";}*/
 }

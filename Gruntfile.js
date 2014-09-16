@@ -8,7 +8,7 @@ module.exports = function( grunt ) {
                 // paths: ["css"]
             },
             files: {
-                "style.css": "css/less/site.less"
+                "css/site.css": "css/less/site.less"
             }
         },
         production: {
@@ -21,7 +21,7 @@ module.exports = function( grunt ) {
                 }
             },
             files: {
-                "style.css": "css/less/site.less"
+                "css/site.css": "css/less/site.less"
             }
         }
     }, // less
