@@ -13,6 +13,17 @@ $(function() {
     $body = $('body');
     adjustWindow();
     function adjustWindow(){
+        // Init Skrollr
+        var s = skrollr.init({
+            render: function(data) {
+
+                //Debugging - Log the current scroll position.
+                //console.log(data.curTop);
+            },
+            smoothScrolling: false,
+            forceHeight: false
+        });
+
         winH = $window.height();
         if(winH <= 850) {
             winH = 850;
@@ -20,9 +31,15 @@ $(function() {
 
         // Resize our slides
         $slide.height(winH);
+
+        // Refresh Skrollr after resizing our sections
+        s.refresh($('.page'));
     }
 
+    //PARALLAX
+    
 
+    // INTERACAO COM O SCROLL DOWN  
     $('.scroll-down').css({display: 'none', bottom: '100px'});
     $(window).load(function () {
         $('.scroll-down').stop(true, true).delay(3000).fadeIn({duration: 500, queue: true, easing: 'easeInOutExpo'});

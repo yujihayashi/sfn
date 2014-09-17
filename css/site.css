@@ -196,6 +196,10 @@ ESTRUTURA START
 }
 .page > .content {
   padding-top: 125px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
 }
 .page .page-header {
   width: 460px;
@@ -221,15 +225,14 @@ ESTRUTURA START
 }
 .page-home {
   background: url(../imagem/site/bg-home.jpg) no-repeat center 325px;
+  overflow: hidden;
+  position: relative;
 }
 .page-home .maquete {
-  width: 100%;
-  background: url(../imagem/site/maquete.png) no-repeat center top;
-  height: 379px;
   position: absolute;
-  left: 0;
-  right: 0;
   top: 264px;
+  left: 50%;
+  margin-left: -651px;
 }
 .page-home .scroll-down {
   position: absolute;
@@ -498,6 +501,9 @@ CLASSES START
   vertical-align: middle;
   display: inline-block;
   background-image: url(../imagem/site/icon.png);
+}
+.parallax-layer {
+  position: absolute;
 }
 .space {
   width: 1%;

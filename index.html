@@ -31,6 +31,8 @@
 	<script type="text/javascript" src="/library/cycle2/jquery.cycle2.carousel.min.js"></script>
 	<script type="text/javascript" src="/library/local-scroll/jquery.scrollTo-1.4.3.1-min.js"></script>
 	<script type="text/javascript" src="/library/local-scroll/jquery.localscroll-1.2.7-min.js"></script>
+	<script type="text/javascript" src="/library/parallax/js/jquery.parallax.js"></script>
+	<script type="text/javascript" src="/library/parallax/js/jquery.event.frame.js"></script>
 	<script type="text/javascript" src="/js/bootstrap_site.js"></script>
 </head>
 <body>
@@ -42,7 +44,7 @@
 					<div class="container">
 						<nav class="navbar navbar-default" role="navigation">
 							<div class="navbar-header">
-								<a href="#home" class="logotipo navbar-brand"><img src="/imagem/site/sandoval-ferreira-neto-arquitetura.png" alt="Logotipo Sandoval Ferreira Neto Arquitetura"></a>
+								<a href="#home" class="logotipo navbar-brand" title="Ir para a página inicial"><img src="/imagem/site/sandoval-ferreira-neto-arquitetura.png" alt="Logotipo Sandoval Ferreira Neto Arquitetura"></a>
 							</div> <!-- .navbar-header -->
 							<div class="collapse navbar-collapse header-right">
 								<a href="#" target="_blank" class="pull-right"><span class="icon-instagram"></span></a>
@@ -58,8 +60,8 @@
 				</div> <!-- site-header -->
 			</div> <!-- .extra-header -->
 			<div class="extra-central">
-				<div class="site-central">
-					<div class="page-home page" id="home">
+				<div class="site-central" id="content">
+					<div class="page-home page" id="home" data-bottom-top="background-position: 50% 380px;" data-top-bottom="background-position: 50% 280px;" data-anchor-target=".page-home">
 						<div class="content">
 							<div class="box-frase">
 								<span class="extra"></span>
@@ -68,14 +70,15 @@
 								</div> <!-- .box-content -->
 								<span class="extra"></span>
 							</div> <!-- .box-frase -->
-							<div class="maquete"></div>
+							<img src="/imagem/site/maquete.png" class="parallax-layer maquete" alt="">
+							<!-- <div class="maquete parallax-layer"></div> -->
 							<p class="text-center scroll-down">
 								<a href="#" class="button"><span class="text">Scroll Down</span><br><span class="icon-triple-arrow-down"></span></a>
 							</p>
 						</div> <!-- .content -->
 					</div> <!-- .page-home -->
-					<div class="page-historico page" id="historico">
-						<div class="content">
+					<div class="page-historico page" id="historico" data-bottom-top="" data-top-bottom="" data-anchor-target=".page-historico">
+						<div class="content" data-bottom-top="opacity:0;" data-top="opacity:1;" data-top-bottom="" data-anchor-target=".page-historico">
 							<div class="page-header">
 								<h2>Histórico</h2>
 								<span class="line"></span>
@@ -83,8 +86,8 @@
 							<div id="timeline-embed"></div>
 						</div> <!-- .content -->
 					</div> <!-- .page-historico -->
-					<div class="page-cases page" id="cases">
-						<div class="content">
+					<div class="page-cases page" id="cases" data-bottom-top="" data-top-bottom="" data-anchor-target=".page-cases">
+						<div class="content" data-bottom-top="background-position: 50% 150%;opacity:0;" data-top="opacity:1;" data-top-bottom="background-position: 50% -50%;" data-anchor-target=".page-cases">
 							<div class="page-header">
 								<h2>Cases</h2>
 								<span class="line"></span>
@@ -163,7 +166,7 @@
 						</div> <!-- .content -->
 					</div> <!-- .page-cases -->
 					<div class="page-equipe page" id="equipe">
-						<div class="content">
+						<div class="content" data-bottom-top="opacity:0;" data-top="opacity:1;" data-top-bottom="" data-anchor-target=".page-equipe">
 							<div class="page-header">
 								<h2>Equipe</h2>
 								<span class="line"></span>
@@ -302,8 +305,8 @@
 
 						</div> <!-- .content -->
 					</div> <!-- .page-equipe -->
-					<div class="page-contato page" id="contato">
-						<div class="content">
+					<div class="page-contato page" id="contato" data-bottom-top="background-position: 50% 150%;" data-top-bottom="background-position: 50% -50%;" data-anchor-target=".page-contato">
+						<div class="content" data-bottom-top="opacity:0;" data-top="opacity:1;" data-top-bottom="" data-anchor-target=".page-contato">
 							<div class="page-header">
 								<h2>Contato</h2>
 								<span class="line"></span>
@@ -363,30 +366,15 @@
 	</div><!-- /.modal -->
 	<script>
 	$(document).ready(function(){
-		var s = skrollr.init({
-			smoothScrolling: true,
-			forceHeight: false
-		});
+		var slideshows = $('.page-equipe .cycle-slideshow').on('cycle-next cycle-prev', function(e, opts) {
+	    // advance the other slideshow
+	    slideshows.not(this).cycle('goto', opts.currSlide);
+	});
 
-		/*var slideshows = $('#equipe-slideshow-1 .cycle-slideshow').on('cycle-next cycle-prev', function(e, opts) {
-		    // advance the other slideshow
-		    $('#equipe-slideshow-1 .cycle-slideshow').cycle('goto', opts.currSlide);
-		    $('#equipe-slideshow-2 .cycle-slideshow').cycle('goto', opts.currSlide);
-		});
-
-		$('#cycle-2 .cycle-slide').click(function () {
+		$('#cycle-2 .cycle-slide').click(function(){
 			var index = $('#cycle-2').data('cycle.API').getSlideIndex(this);
 			slideshows.cycle('goto', index);
-		});*/
-	var slideshows = $('.page-equipe .cycle-slideshow').on('cycle-next cycle-prev', function(e, opts) {
-    // advance the other slideshow
-    slideshows.not(this).cycle('goto', opts.currSlide);
-});
-
-$('#cycle-2 .cycle-slide').click(function(){
-    var index = $('#cycle-2').data('cycle.API').getSlideIndex(this);
-    slideshows.cycle('goto', index);
-});
+		});
 
 	});
 	</script>
@@ -408,6 +396,15 @@ $('#cycle-2 .cycle-slide').click(function(){
     </script>
     <script type="text/javascript" src="/library/timelinejs/build/js/storyjs-embed.js"></script>
     <script src="http://localhost:35729/livereload.js"></script>
-
+<script>
+  jQuery(document).ready(function(){
+    jQuery('.page-home .parallax-layer')
+    .parallax({
+      mouseport: jQuery('.page-home'),
+      xparallax: '50px',
+yparallax: false
+    });
+  });
+  </script>
 </body>
 </html>
