@@ -29,6 +29,8 @@
 	<script type="text/javascript" src="/library/cycle2/jquery.cycle2.swipe.min.js"></script>
 	<script type="text/javascript" src="/library/cycle2/jquery.cycle2.scrollVert.min.js"></script>
 	<script type="text/javascript" src="/library/cycle2/jquery.cycle2.carousel.min.js"></script>
+	<script type="text/javascript" src="/library/local-scroll/jquery.scrollTo-1.4.3.1-min.js"></script>
+	<script type="text/javascript" src="/library/local-scroll/jquery.localscroll-1.2.7-min.js"></script>
 	<script type="text/javascript" src="/js/bootstrap_site.js"></script>
 </head>
 <body>
@@ -40,15 +42,15 @@
 					<div class="container">
 						<nav class="navbar navbar-default" role="navigation">
 							<div class="navbar-header">
-								<span class="logotipo navbar-brand"><img src="/imagem/site/sandoval-ferreira-neto-arquitetura.png" alt="Logotipo Sandoval Ferreira Neto Arquitetura"></span>
+								<a href="#home" class="logotipo navbar-brand"><img src="/imagem/site/sandoval-ferreira-neto-arquitetura.png" alt="Logotipo Sandoval Ferreira Neto Arquitetura"></a>
 							</div> <!-- .navbar-header -->
 							<div class="collapse navbar-collapse header-right">
 								<a href="#" target="_blank" class="pull-right"><span class="icon-instagram"></span></a>
 								<ul class="nav navbar-nav navbar-right">
-									<li class="first um"><a href="#">Histórico</a></li>
-									<li class="dois"><a href="#">Equipe</a></li>
-									<li class="first tres"><a href="#">Cases</a></li>
-									<li class="quatro"><a href="#">Contato</a></li>
+									<li class="first um"><a href="#historico">Histórico</a></li>
+									<li class="dois"><a href="#equipe">Equipe</a></li>
+									<li class="first tres"><a href="#cases">Cases</a></li>
+									<li class="quatro"><a href="#contato">Contato</a></li>
 								</ul>
 							</div><!-- /.navbar-collapse -->
 						</nav>
@@ -57,7 +59,7 @@
 			</div> <!-- .extra-header -->
 			<div class="extra-central">
 				<div class="site-central">
-					<div class="page-home page">
+					<div class="page-home page" id="home">
 						<div class="content">
 							<div class="box-frase">
 								<span class="extra"></span>
@@ -72,7 +74,7 @@
 							</p>
 						</div> <!-- .content -->
 					</div> <!-- .page-home -->
-					<div class="page-historico page">
+					<div class="page-historico page" id="historico">
 						<div class="content">
 							<div class="page-header">
 								<h2>Histórico</h2>
@@ -81,7 +83,7 @@
 							<div id="timeline-embed"></div>
 						</div> <!-- .content -->
 					</div> <!-- .page-historico -->
-					<div class="page-cases page">
+					<div class="page-cases page" id="cases">
 						<div class="content">
 							<div class="page-header">
 								<h2>Cases</h2>
@@ -160,7 +162,7 @@
 							</div> <!-- .box-nav -->
 						</div> <!-- .content -->
 					</div> <!-- .page-cases -->
-					<div class="page-equipe page">
+					<div class="page-equipe page" id="equipe">
 						<div class="content">
 							<div class="page-header">
 								<h2>Equipe</h2>
@@ -300,7 +302,7 @@
 
 						</div> <!-- .content -->
 					</div> <!-- .page-equipe -->
-					<div class="page-contato page">
+					<div class="page-contato page" id="contato">
 						<div class="content">
 							<div class="page-header">
 								<h2>Contato</h2>
@@ -316,11 +318,6 @@
 					</div> <!-- .page-contato -->
 				</div> <!-- .site-central -->
 			</div> <!-- .extra-central -->
-			<div class="extra-footer">
-				<div class="site-footer" id="page-footer">
-
-				</div> <!-- .site-footer -->
-			</div> <!-- .extra-footer -->
 		</div> <!-- .site-geral -->
 	</div> <!-- .extra-geral -->
 	<div class="modal fade" id="modal-contato">

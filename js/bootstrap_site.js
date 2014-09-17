@@ -13,27 +13,50 @@ $(function() {
     $body = $('body');
     adjustWindow();
     function adjustWindow(){
-
-        
-
-        // Get window size
         winH = $window.height();
-        //console.log(winH);
-        // Keep minimum height 550
         if(winH <= 850) {
             winH = 850;
         }
-//        console.log(winH);
 
         // Resize our slides
         $slide.height(winH);
-        //$slideTall.height(winH*2);
-        //$slideTall2.height(winH*3);
     }
+
+
     $('.scroll-down').css({display: 'none', bottom: '100px'});
     $(window).load(function () {
         $('.scroll-down').stop(true, true).delay(3000).fadeIn({duration: 500, queue: true, easing: 'easeInOutExpo'});
         $('.scroll-down').animate({bottom: '0px'}, {duration: 2000, queue: true, easing: 'easeOutBounce'});
+    });
+
+
+    // The default axis is 'y', but in this demo, I want to scroll both
+    // You can modify any default like this
+    $.localScroll.defaults.axis = 'y';
+
+    // Scroll initially if there's a hash (#something) in the url 
+    $.localScroll.hash({
+        target: 'body', // Could be a selector or a jQuery object too.
+        queue:true,
+        duration:2000
+    });
+
+    /**
+     * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+     * also affect the >> and << links. I want every link in the page to scroll.
+     */
+     $('.navbar-nav, .navbar-header').localScroll({
+        target: 'body', // could be a selector or a jQuery object too.
+        queue:true,
+        duration:2000,
+        hash:true,
+        //filter: {'.panel-group'},
+        onBefore:function( e, anchor, $target ){
+            // The 'this' is the settings object, can be modified
+        },
+        onAfter:function( anchor, settings ){
+            // The 'this' contains the scrolled element (#content)
+        }
     });
 });
 $(function() {
