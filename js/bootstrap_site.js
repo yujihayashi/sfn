@@ -18,7 +18,7 @@ $(function() {
 
         // Get window size
         winH = $window.height();
-        console.log(winH);
+        //console.log(winH);
         // Keep minimum height 550
         if(winH <= 850) {
             winH = 850;
