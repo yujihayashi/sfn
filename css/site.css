@@ -137,7 +137,7 @@ ESTRUTURA START
   right: 0;
   top: 0;
   background: #FFF;
-  z-index: 2;
+  z-index: 101;
 }
 .extra-header .site-header {
   height: 125px;
@@ -239,6 +239,7 @@ ESTRUTURA START
 }
 .page-cases {
   background: url(../imagem/site/bg-cases.jpg) no-repeat center #393939;
+  background-size: cover;
 }
 .page-cases,
 .page-cases a {
@@ -327,6 +328,24 @@ CLASSES START
 .box-frase .box-content {
   padding: 14px 0;
   text-align: center;
+}
+.box-cases {
+  background: #FFF;
+  color: #949599;
+}
+.box-cases .cycle-slideshow li {
+  text-align: center;
+}
+.box-cases .cycle-slideshow li * {
+  white-space: normal;
+}
+.box-cases .cycle-slideshow .desc {
+  padding: 20px 10%;
+  width: 100%;
+}
+.box-cases .cycle-slideshow .link {
+  color: #d2232a;
+  font-size: 12px;
 }
 .imagem {
   display: inline-block;

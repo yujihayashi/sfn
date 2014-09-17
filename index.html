@@ -19,9 +19,16 @@
 	<link rel="stylesheet" href="/fonts/stylesheet.css">
 	<link rel="stylesheet" href="/imagem/site/icon.css">
 	<link rel="stylesheet" href="/css/site.css">
+	<link href="/library/timelinejs/build/css/timeline.css?7" rel="stylesheet" />
+	<link href="/css/timeline-custom.css?7" rel="stylesheet" />
 	<script type="text/javascript" src="/library/jquery-1.9.1.min.js"></script>
 	<script type="text/javascript" src="/library/bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="/library/skrollr/skrollr.min.js"></script>
+	<script type="text/javascript" src="/library/easing/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="/library/cycle2/jquery.cycle2.min.js"></script>
+	<script type="text/javascript" src="/library/cycle2/jquery.cycle2.swipe.min.js"></script>
+	<script type="text/javascript" src="/library/cycle2/jquery.cycle2.scrollVert.min.js"></script>
+	<script type="text/javascript" src="/library/cycle2/jquery.cycle2.carousel.min.js"></script>
 	<script type="text/javascript" src="/js/bootstrap_site.js"></script>
 </head>
 <body>
@@ -71,6 +78,7 @@
 								<h2>Histórico</h2>
 								<span class="line"></span>
 							</div> <!-- .page-header -->
+							<div id="timeline-embed"></div>
 						</div> <!-- .content -->
 					</div> <!-- .page-historico -->
 					<div class="page-cases page">
@@ -79,6 +87,54 @@
 								<h2>Cases</h2>
 								<span class="line"></span>
 							</div> <!-- .page-header -->
+							<div class="box-cases">
+								<ul class="cycle-slideshow" data-cycle-fx="carousel" data-cycle-timeout="5000" data-cycle-speed="1800" data-cycle-slides="> li" data-cycle-pager=".page-cases .cycle-nav" data-cycle-next=".page-cases .cycle-next" data-cycle-prev=".page-cases .cycle-prev" data-cycle-easing="easeInOutExpo"data-cycle-log="false">
+									<li>
+										<a href="/imagem/site/case-01.jpg" rel="prettyPhoto[case]" class="imagem"><img src="/imagem/site/case-01.jpg" alt=""></a>
+										<p class="desc">
+											For a new gourmet market in downtown Brooklyn, we conceived a unique brand system based on smart copy expressed in a bespoke typeface.
+											<br><br>
+											<a href="#" class="link">SAIBA MAIS ></a>
+										</p>
+									</li>
+									<li>
+										<a href="/imagem/site/case-01.jpg" rel="prettyPhoto[case]" class="imagem"><img src="/imagem/site/case-01.jpg" alt=""></a>
+										<p class="desc">
+											For a new gourmet market in downtown Brooklyn, we conceived a unique brand system based on smart copy expressed in a bespoke typeface.
+											<br><br>
+											<a href="#" class="link">SAIBA MAIS ></a>
+										</p>
+									</li>
+									<li>
+										<a href="/imagem/site/case-01.jpg" rel="prettyPhoto[case]" class="imagem"><img src="/imagem/site/case-01.jpg" alt=""></a>
+										<p class="desc">
+											For a new gourmet market in downtown Brooklyn, we conceived a unique brand system based on smart copy expressed in a bespoke typeface.
+											<br><br>
+											<a href="#" class="link">SAIBA MAIS ></a>
+										</p>
+									</li>
+									<li>
+										<a href="/imagem/site/case-01.jpg" rel="prettyPhoto[case]" class="imagem"><img src="/imagem/site/case-01.jpg" alt=""></a>
+										<p class="desc">
+											For a new gourmet market in downtown Brooklyn, we conceived a unique brand system based on smart copy expressed in a bespoke typeface.
+											<br><br>
+											<a href="#" class="link">SAIBA MAIS ></a>
+										</p>
+									</li>
+									<li>
+										<a href="/imagem/site/case-01.jpg" rel="prettyPhoto[case]" class="imagem"><img src="/imagem/site/case-01.jpg" alt=""></a>
+										<p class="desc">
+											For a new gourmet market in downtown Brooklyn, we conceived a unique brand system based on smart copy expressed in a bespoke typeface.
+											<br><br>
+											<a href="#" class="link">SAIBA MAIS ></a>
+										</p>
+									</li>
+								</ul>
+							</div> <!-- .box-cases -->
+							<div class="box-nav">
+								<a href="javascript:void(0);" class="cycle-prev"><span class="span icon-arrow-left-white"></span></a>
+								<a href="javascript:void(0);" class="cycle-next"><span class="span icon-arrow-right-white"></span></a>
+							</div>
 						</div> <!-- .content -->
 					</div> <!-- .page-cases -->
 					<div class="page-equipe page">
@@ -128,16 +184,16 @@
 						</div> <!-- .form-group -->
 						<div class="row">
 							<div class="col-xs-6">
-						<div class="form-group">
-							<label for="fEmail">Email:</label>
-							<input type="text" class="form-control" id="fEmail">
-						</div> <!-- .form-group -->
+								<div class="form-group">
+									<label for="fEmail">Email:</label>
+									<input type="text" class="form-control" id="fEmail">
+								</div> <!-- .form-group -->
 							</div> <!-- .col-xs-6 -->
 							<div class="col-xs-6">
-						<div class="form-group">
-							<label for="fTelefone">Telefone:</label>
-							<input type="text" class="form-control" id="fTelefone">
-						</div> <!-- .form-group -->
+								<div class="form-group">
+									<label for="fTelefone">Telefone:</label>
+									<input type="text" class="form-control" id="fTelefone">
+								</div> <!-- .form-group -->
 							</div> <!-- .col-xs-6 -->
 						</div> <!-- .row -->
 						<div class="form-group">
@@ -161,7 +217,24 @@
 		});
 	});
 	</script>
-	<script src="http://localhost:35729/livereload.js"></script>
-	
+	<script type="text/javascript">
+	var timeline_config = {
+		width: '100%',
+		height: '600',
+		source: '/js/historia.json',
+        embed_id: 'timeline-embed', //OPTIONAL USE A DIFFERENT DIV ID FOR EMBED
+        start_at_end: false, //OPTIONAL START AT LATEST DATE
+        start_at_slide: '0', //OPTIONAL START AT SPECIFIC SLIDE
+        start_zoom_adjust: '0', //OPTIONAL TWEAK THE DEFAULT ZOOM LEVEL
+        hash_bookmark: false, //OPTIONAL LOCATION BAR HASHES
+        //font:               'AbrilFatface-Average',             //OPTIONAL FONT
+        debug: false, //OPTIONAL DEBUG TO CONSOLE
+        lang: 'pt-br', //OPTIONAL LANGUAGE
+        maptype: 'watercolor'                   //OPTIONAL MAP STYLE
+    }
+    </script>
+    <script type="text/javascript" src="/library/timelinejs/build/js/storyjs-embed.js"></script>
+    <script src="http://localhost:35729/livereload.js"></script>
+
 </body>
 </html>

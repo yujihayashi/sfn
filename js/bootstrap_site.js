@@ -20,8 +20,8 @@ $(function() {
         winH = $window.height();
         console.log(winH);
         // Keep minimum height 550
-        if(winH <= 561) {
-            winH = 561;
+        if(winH <= 850) {
+            winH = 850;
         }
 //        console.log(winH);
 
@@ -29,10 +29,12 @@ $(function() {
         $slide.height(winH);
         //$slideTall.height(winH*2);
         //$slideTall2.height(winH*3);
-
-
-
     }
+    $('.scroll-down').css({display: 'none', bottom: '100px'});
+    $(window).load(function () {
+        $('.scroll-down').stop(true, true).delay(3000).fadeIn({duration: 500, queue: true, easing: 'easeInOutExpo'});
+        $('.scroll-down').animate({bottom: '0px'}, {duration: 2000, queue: true, easing: 'easeOutBounce'});
+    });
 });
 $(function() {
     $('.jImgFormat').find('img').each(function() {
