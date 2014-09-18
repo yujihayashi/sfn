@@ -85,6 +85,12 @@ $(function() {
             // The 'this' contains the scrolled element (#content)
         }
     });
+
+     $('.site-header .navbar-nav li a').hover(function () {
+        $(this).stop(true, true).delay(1).animate({width: '100%'}, {duration: 400, queue: true, easing: 'easeInOutExpo'});
+     }, function () {
+        $(this).stop(true, true).delay(1).animate({width: '75px'}, {duration: 400, queue: true, easing: 'easeInOutExpo'});
+     });
 });
 $(function() {
     $('.jImgFormat').find('img').each(function() {
