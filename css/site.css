@@ -200,6 +200,7 @@ ESTRUTURA START
   right: 0;
   top: 0;
   bottom: 0;
+  min-height: 550px;
 }
 .page .page-header {
   width: 460px;
@@ -224,7 +225,6 @@ ESTRUTURA START
   margin-bottom: -1px;
 }
 .page-home {
-  background: url(../imagem/site/bg-home.jpg) no-repeat center 325px;
   overflow: hidden;
   position: relative;
 }

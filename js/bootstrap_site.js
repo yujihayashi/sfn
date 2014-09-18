@@ -46,6 +46,16 @@ $(function() {
         $('.scroll-down').animate({bottom: '0px'}, {duration: 2000, queue: true, easing: 'easeOutBounce'});
     });
 
+    // INTERACAO COM A MAQUETE 
+    $('.page-home .box-frase').css({display: 'none', marginTop: '0px'});
+    $('.page-home .maquete').css({display: 'none'});
+    $(window).load(function () {
+        $('.page-home .box-frase').stop(true, true).delay(500).fadeIn({duration: 800, queue: false, easing: 'easeInOutExpo'})
+        .animate({marginTop: '52px'}, {duration: 800, queue: false, easing: 'easeInOutExpo'});
+        $('.page-home .maquete').stop(true, true).delay(1000).fadeIn({duration: 1000, queue: true, easing: 'easeInOutExpo'});
+        // $('.scroll-down').animate({bottom: '0px'}, {duration: 2000, queue: true, easing: 'easeOutBounce'});
+    });
+
 
     // The default axis is 'y', but in this demo, I want to scroll both
     // You can modify any default like this
@@ -62,7 +72,7 @@ $(function() {
      * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
      * also affect the >> and << links. I want every link in the page to scroll.
      */
-     $('.navbar-nav, .navbar-header').localScroll({
+     $('.navbar-nav, .navbar-header, .scroll-down').localScroll({
         target: 'body', // could be a selector or a jQuery object too.
         queue:true,
         duration:2000,
