@@ -414,6 +414,14 @@ CLASSES START
   background: #b0272a;
   border-left: 1px solid #FFF;
 }
+.cycle-cases,
+.cycle-cases .cycle-slideshow,
+.cycle-cases .cycle-slideshow li {
+  width: 100%;
+}
+.cycle-cases .cycle-slideshow li {
+  text-align: center;
+}
 #equipe-slideshow-1,
 #equipe-slideshow-1 .cycle-slideshow,
 #equipe-slideshow-1 .item {
